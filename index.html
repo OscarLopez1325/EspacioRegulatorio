@@ -12,7 +12,7 @@
             --blanco: #ffffff;
             --gris-claro: #f4f4f9;
             --texto: #333333;
-            --whatsapp: #25D366; /* Color de WhatsApp */
+            --whatsapp: #25D366; 
         }
 
         * {
@@ -26,6 +26,7 @@
             background-color: var(--blanco);
             color: var(--texto);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Navegación */
@@ -44,10 +45,17 @@
         header h1 {
             font-size: 1.5rem;
             color: var(--blanco);
+            text-align: center;
         }
 
         header h1 span {
             color: var(--dorado);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         nav ul {
@@ -67,7 +75,31 @@
             color: var(--dorado);
         }
 
-        /* Sección Hero (Principal) */
+        /* Selector de Idioma */
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--blanco);
+            color: var(--blanco);
+            padding: 3px 8px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--dorado);
+            border-color: var(--dorado);
+            color: var(--azul-oscuro);
+        }
+
+        /* Sección Hero */
         .hero {
             background-color: var(--gris-claro);
             padding: 80px 5%;
@@ -95,6 +127,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             display: inline-block;
+            text-align: center;
         }
 
         .btn:hover {
@@ -113,7 +146,7 @@
             margin-bottom: 40px;
         }
 
-        /* Cuadrículas de Servicios y Cursos */
+        /* Cuadrículas y Tarjetas */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -154,7 +187,7 @@
             margin-bottom: 15px;
         }
 
-        /* Sección Equipo */
+        /* Mascotas */
         .equipo-bg {
             background-color: var(--azul-oscuro);
             color: var(--blanco);
@@ -164,7 +197,6 @@
             color: var(--dorado);
         }
 
-        /* ESTILOS ESPECÍFICOS PARA LAS MASCOTAS */
         .equipo-card {
             background-color: var(--blanco);
             color: var(--texto);
@@ -212,10 +244,10 @@
             margin-bottom: 10px;
         }
 
-        /* Área de Contacto */
+        /* Contacto */
         .contacto-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             max-width: 900px;
             margin: 0 auto;
@@ -242,6 +274,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
+            word-break: break-all;
         }
 
         .contacto-link:hover {
@@ -264,7 +297,6 @@
             background-color: #128C7E;
         }
 
-        /* Pie de página */
         footer {
             background-color: #11142b;
             color: var(--blanco);
@@ -273,8 +305,35 @@
             font-size: 0.9rem;
         }
 
-        footer p {
-            margin-top: 10px;
+        /* MÓVIL RESPONSIVO */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 15px;
+            }
+            nav {
+                flex-direction: column;
+                width: 100%;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
@@ -284,147 +343,20 @@
         <h1>ESPACIO <span>REGULATORIO</span></h1>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#consultoria">Consultoría</a></li>
-                <li><a href="#capacitacion">Capacitación</a></li>
-                <li><a href="#equipo">Mascotas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="#consultoria" data-i18n="nav_consulting">Consultoría</a></li>
+                <li><a href="#capacitacion" data-i18n="nav_training">Capacitación</a></li>
+                <li><a href="#equipo" data-i18n="nav_team">Mascotas</a></li>
+                <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
             </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('es')">ES</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('pt')">PT</button>
+            </div>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
-        <h2>Hacemos que lo complejo sea simple para tu empresa</h2>
-        <p>Te guiamos paso a paso en el cumplimiento de normativas sanitarias ante COFEPRIS y te brindamos las herramientas para que tus proyectos despeguen con seguridad.</p>
-        <a href="#contacto" class="btn">Solicita un diagnóstico</a>
-    </section>
-
-    <section id="consultoria">
-        <h2 class="section-title">Nuestros Servicios de Consultoría</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>Transición y Gestión CTD 3.0</h3>
-                    <p>Especialistas en la migración de la guía CTD 2.0 a la 3.0, asegurando la correcta integración de tus expedientes bajo los lineamientos de la ICH.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>Gestión en DIGIPRiS</h3>
-                    <p>Agilizamos y gestionamos tus trámites a través de la plataforma digital de COFEPRIS para optimizar tiempos de respuesta.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>Asuntos Regulatorios</h3>
-                    <p>Asesoría en clasificación de productos, publicidad y cumplimiento de normativas sanitarias vigentes para evitar riesgos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="capacitacion" style="background-color: var(--gris-claro);">
-        <h2 class="section-title">Academia y Capacitación</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">Nuestros programas de formación están diseñados para profesionales del sector salud, ofreciendo valor curricular y herramientas prácticas para la gestión regulatoria.</p>
-        
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <span class="curso-badge">Incluye Constancia DC-3</span>
-                    <h3>Integración de Dossiers de Dispositivos Médicos</h3>
-                    <p>Curso especializado presencial y online para dominar los requisitos documentales y las normas de etiquetado vigentes.</p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/525653943130?text=Hola,%20me%20gustaría%20recibir%20información%20sobre%20el%20curso%20de%20Dossier%20de%20Dispositivos%20Médicos" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Pedir informes</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="curso-badge">Incluye Constancia DC-3</span>
-                    <h3>Regulación de Suplementos Alimenticios y Publicidad</h3>
-                    <p>Aprende el marco legal y sanitario correcto para la formulación, etiquetado y promoción publicitaria de suplementos.</p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/525543849035?text=Hola,%20me%20gustaría%20recibir%20información%20sobre%20el%20curso%20de%20Suplementos%20Alimenticios" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.9rem;">Pedir informes</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipo" class="equipo-bg">
-        <h2 class="section-title">Aprende con Nuestro Equipo</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">Nuestra metodología de enseñanza integra personajes únicos que hacen del aprendizaje regulatorio una experiencia dinámica y amigable.</p>
-        <div class="grid">
-            
-            <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="bu-noms.png" alt="Retrato de BuNOMS">
-                </div>
-                <h3>Hon. Licenciado BuNOMS</h3>
-                <p class="title-text">Magistrado</p>
-                <p>Tu guía experto en actualizaciones legales y normativas.</p>
-            </div>
-
-            <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="cleo.png" alt="Retrato de Cleo">
-                </div>
-                <h3>Cleo</h3>
-                <p class="title-text">Investigadora Legal</p>
-                <p>Casos regulatorios para la araña.</p>
-            </div>
-
-            <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="elefeum.png" alt="Retrato de EleFEUM">
-                </div>
-                <h3>EleFEUM</h3>
-                <p class="title-text">Especialista Normativa</p>
-                <p>Te mantiene al día con las últimas actualizaciones de leyes y regulaciones.</p>
-            </div>
-
-            <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="oso-reguloso.png" alt="Retrato de Oso Reguloso">
-                </div>
-                <h3>Oso Reguloso</h3>
-                <p class="title-text">Director de Gestión</p>
-                <p>Claridad y fuerza en la gestión de tus trámites más complejos.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contacto">
-        <h2 class="section-title">Contáctanos</h2>
-        <div class="contacto-container">
-            
-            <div class="contacto-item">
-                <h4>Atención Vía WhatsApp</h4>
-                <p>Escríbenos directamente para agendar una consultoría o pedir informes de nuestros cursos.</p>
-                <a href="https://wa.me/525653943130" target="_blank" class="btn-wa">📱 Enviar WhatsApp al 56 5394 3130</a>
-            </div>
-
-            <div class="contacto-item">
-                <h4>Atención Telefónica</h4>
-                <p>Llámanos en horario de oficina para atención personalizada.</p>
-                <a href="tel:5543849035" class="contacto-link">📞 55 4384 9035</a>
-            </div>
-
-            <div class="contacto-item">
-                <h4>Correo Electrónico</h4>
-                <p>Para trámites corporativos y envío de documentación.</p>
-                <a href="mailto:administracion@espacioregulatorio.com" class="contacto-link">✉️ administracion@espacioregulatorio.com</a>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>Impulsa tu cumplimiento regulatorio con seguridad y experiencia.</p>
-        <p style="margin-top: 20px;">&copy; 2026 Espacio Regulatorio. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
+        <h2 data-i18n="hero_title">Hacemos que lo complejo sea simple para tu empresa</h2>
+        <p data-i18n="hero_desc">Te guiamos paso a paso en el cumplimiento de normativas sanitarias ante COFEPRIS y te brindamos las herramientas para que tus proyectos despeguen con seguridad.</p>
