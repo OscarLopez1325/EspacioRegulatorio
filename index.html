@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacio Regulatorio | Consultoría y Capacitación</title>
+    <style>
+        /* Paleta de colores basada en el logo */
+        :root {
+            --azul-oscuro: #1d2247;
+            --dorado: #dca33e;
+            --blanco: #ffffff;
+            --gris-claro: #f4f4f9;
+            --texto: #333333;
+            --whatsapp: #25D366; /* Color de WhatsApp */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--blanco);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* Navegación */
+        header {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--blanco);
+        }
+
+        header h1 span {
+            color: var(--dorado);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--dorado);
+        }
+
+        /* Sección Hero (Principal) */
+        .hero {
+            background-color: var(--gris-claro);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            background-color: var(--dorado);
+            color: var(--azul-oscuro);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #c48f32;
+        }
+
+        /* Secciones
