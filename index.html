@@ -85,6 +85,11 @@
 
         .curso-badge { background-color: var(--dorado); color: var(--azul-oscuro); font-size: 0.8rem; font-weight: bold; padding: 5px 12px; border-radius: 20px; display: inline-block; margin-bottom: 15px; }
 
+        /* Estilos para la imagen de Valores */
+        .valores-container { text-align: center; margin-top: 60px; }
+        .valores-container h3 { color: var(--azul-oscuro); font-size: 1.8rem; margin-bottom: 30px; text-transform: uppercase; }
+        .valores-img { max-width: 100%; width: 900px; border-radius: 10px; display: block; margin: 0 auto; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+
         .equipo-bg { background-color: var(--azul-oscuro); color: var(--blanco); }
         .equipo-bg .section-title { color: var(--dorado); }
         .equipo-bg .section-subtitle { color: var(--blanco); }
@@ -151,6 +156,11 @@
                 <h3 data-i18n="vision_title" style="text-align: center; font-size: 1.5rem;">Visión</h3>
                 <p data-i18n="vision_text">Ser una consultoría de referencia nacional e internacional que permita que, a través de nuestro expertise y asesoría técnico-regulatoria se garantice el acceso a medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas en cumplimiento, durante el ciclo de vida de los mismos, así como el ofrecimiento de servicios de salud para coadyuvar al mantenimiento de la salud pública.</p>
             </div>
+        </div>
+        
+        <div class="valores-container">
+            <h3 data-i18n="values_title">Nuestros Valores</h3>
+            <img src="valores.jpg" alt="Valores de Synergy TJ" class="valores-img">
         </div>
     </section>
 
@@ -306,9 +316,9 @@
                 about_title: "Nuestra Filosofía",
                 mission_title: "Misión", mission_text: "Coadyuvar a que las empresas cuenten con las herramientas suficientes para la toma de decisiones, con óptica multidisciplinaria; con la finalidad de tener medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas y servicios de salud asequibles para la población.",
                 vision_title: "Visión", vision_text: "Ser una consultoría de referencia nacional e internacional que permita que, a través de nuestro expertise y asesoría técnico-regulatoria se garantice el acceso a medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas en cumplimiento, durante el ciclo de vida de los mismos, así como el ofrecimiento de servicios de salud para coadyuvar al mantenimiento de la salud pública.",
+                values_title: "Nuestros Valores",
                 serv_title: "Servicios Corporativos", serv_subtitle: "Garantizamos la seguridad y el cumplimiento normativo en cada etapa de tu operación.",
                 
-                /* Holder */
                 s1_title: "Holder / Representante Legal", 
                 s1_p1: "Ponemos a tu disposición un almacén de depósito y distribución con aviso de funcionamiento para venta al por mayor de medicamentos fracción IV, V y VI, así como dispositivos médicos.",
                 s1_li1: "Representación Legal de titulares en el extranjero (Medicamentos de fabricación extranjera).",
@@ -319,7 +329,6 @@
                 s1_t1: "Materia prima", s1_t2: "Cosméticos", s1_t3: "Suplementos Alimenticios", s1_t4: "Medicamentos", s1_t5: "Dispositivos médicos",
                 s1_note: "En caso de que requerir para uso veterinario, favor de indicarlo para ayudarle a buscar la mejor opción.",
 
-                /* Establecimientos */
                 s2_title: "Establecimientos y Certificaciones",
                 s2_li1: "Implementación de SGC, obtención de Certificación ISO 13485:2016, GMPS de COFEPRIS, Licencias, entre otros.",
                 s2_li2: "Verificación de instalaciones.", s2_li3: "Auditorías.", s2_li4: "Apoyo en el manejo de medidas de seguridad.",
@@ -327,11 +336,9 @@
                 s2_li5: "Obtención de la certificación con la NOM-024-SSA3-2012 Sistemas de Información de Registro Electrónico para la Salud.",
                 s2_li6: "Intercambio de Información en Salud ante la DGIS.",
 
-                /* COFEPRIS */
                 s3_title: "Trámites ante COFEPRIS",
                 s3_li1: "Armado de dossier de Registro Nuevo, Modificaciones y Prórrogas de Medicamentos y DM.", s3_li2: "Clave alfanumérica de Remedios Herbolarios.", s3_li3: "Clasificación de Suplementos Alimenticios.", s3_li4: "Avisos y Permisos de Publicidad.", s3_li5: "Permisos de Importación.", s3_li6: "Aviso de Funcionamiento y Responsable Sanitario.",
 
-                /* SENASICA */
                 s4_title: "Trámites ante SENASICA",
                 s4_li1: "Aviso de inicio de Funcionamiento.", s4_li2: "Registros veterinarios.", s4_li3: "Autorización de Alimentos. Veterinarios.", s4_li4: "Certificado de Libre Venta.", s4_li5: "Certificados de Origen.", s4_li6: "Permisos de importación.", s4_li7: "Responsiva MVZ autorizado.", s4_li8: "Verificación de establecimientos.",
 
@@ -347,6 +354,7 @@
                 about_title: "Our Philosophy",
                 mission_title: "Mission", mission_text: "To help companies have sufficient tools for decision-making from a multidisciplinary perspective; aiming to provide affordable medications, medical devices, cosmetics, dietary supplements, food, alcoholic beverages, and healthcare services to the population.",
                 vision_title: "Vision", vision_text: "To be a national and international reference consultancy that ensures, through our expertise and technical-regulatory advice, access to compliant medications, medical devices, cosmetics, dietary supplements, food, and alcoholic beverages throughout their life cycle, as well as offering healthcare services to contribute to the maintenance of public health.",
+                values_title: "Our Values",
                 serv_title: "Corporate Services", serv_subtitle: "We ensure safety and regulatory compliance at every stage of your operation.",
                 
                 s1_title: "Holder / Legal Representative", 
@@ -384,6 +392,7 @@
                 about_title: "Nossa Filosofia",
                 mission_title: "Missão", mission_text: "Contribuir para que as empresas contem com as ferramentas suficientes para a tomada de decisões, com uma ótica multidisciplinar; com a finalidade de ter medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos, bebidas alcoólicas e serviços de saúde acessíveis para a população.",
                 vision_title: "Visão", vision_text: "Ser uma consultoria de referência nacional e internacional que permita, através da nossa expertise e assessoria técnico-regulatória, garantir o acesso a medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos e bebidas alcoólicas em conformidade durante o seu ciclo de vida, bem como a oferta de serviços de saúde para contribuir com a manutenção da saúde pública.",
+                values_title: "Nossos Valores",
                 serv_title: "Serviços Corporativos", serv_subtitle: "Garantimos a segurança e o cumprimento normativo em cada etapa de sua operação.",
                 
                 s1_title: "Holder / Representante Legal", 
