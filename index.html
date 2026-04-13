@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espacio Regulatorio | Consultoría y Capacitación</title>
+    <title>Synergy TJ | Regulación, Logística y Capacitación</title>
     <style>
-        /* Paleta de colores basada en el logo */
         :root {
             --azul-oscuro: #1d2247;
             --dorado: #dca33e;
@@ -29,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Navegación */
         header {
             background-color: var(--azul-oscuro);
             color: var(--blanco);
@@ -43,310 +41,83 @@
         }
 
         header h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--blanco);
             text-align: center;
+            letter-spacing: 1px;
         }
 
-        header h1 span {
-            color: var(--dorado);
-        }
+        header h1 span { color: var(--dorado); }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a { color: var(--blanco); text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--dorado); }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+        .lang-switch { display: flex; gap: 5px; }
+        .lang-btn { background: transparent; border: 1px solid var(--blanco); color: var(--blanco); padding: 3px 8px; cursor: pointer; border-radius: 3px; font-weight: bold; font-size: 0.8rem; transition: all 0.3s; }
+        .lang-btn:hover, .lang-btn.active { background: var(--dorado); border-color: var(--dorado); color: var(--azul-oscuro); }
 
-        nav ul li a {
-            color: var(--blanco);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+        .hero { background-color: var(--gris-claro); padding: 80px 5%; text-align: center; border-bottom: 5px solid var(--dorado); }
+        .hero h2 { font-size: 2.5rem; color: var(--azul-oscuro); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto; }
 
-        nav ul li a:hover {
-            color: var(--dorado);
-        }
+        .btn { background-color: var(--dorado); color: var(--azul-oscuro); padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s; display: inline-block; text-align: center; }
+        .btn:hover { background-color: #c48f32; }
 
-        /* Selector de Idioma */
-        .lang-switch {
-            display: flex;
-            gap: 5px;
-        }
+        section { padding: 60px 5%; }
+        .section-title { text-align: center; color: var(--azul-oscuro); font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
+        .section-subtitle { text-align: center; max-width: 800px; margin: -20px auto 40px auto; font-size: 1.1rem; color: #555; }
 
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--blanco);
-            color: var(--blanco);
-            padding: 3px 8px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            transition: all 0.3s;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--dorado);
-            border-color: var(--dorado);
-            color: var(--azul-oscuro);
-        }
+        .card { background-color: var(--blanco); border: 1px solid #ddd; border-top: 4px solid var(--azul-oscuro); border-radius: 8px; padding: 25px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--dorado); }
+        .card h3 { color: var(--azul-oscuro); margin-bottom: 15px; font-size: 1.2rem; border-bottom: 1px solid var(--gris-claro); padding-bottom: 10px; }
+        .card p { margin-bottom: 10px; }
+        .card ul { margin-left: 18px; color: #555; font-size: 0.95rem; }
+        .card li { margin-bottom: 6px; }
 
-        /* Sección Hero */
-        .hero {
-            background-color: var(--gris-claro);
-            padding: 80px 5%;
-            text-align: center;
-        }
+        .curso-badge { background-color: var(--dorado); color: var(--azul-oscuro); font-size: 0.75rem; font-weight: bold; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--azul-oscuro);
-            margin-bottom: 20px;
-        }
+        .equipo-bg { background-color: var(--azul-oscuro); color: var(--blanco); }
+        .equipo-bg .section-title { color: var(--dorado); }
+        .equipo-bg .section-subtitle { color: var(--blanco); }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-        }
+        .equipo-card { background-color: var(--blanco); color: var(--texto); border: 2px solid var(--dorado); padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s; }
+        .equipo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.2); }
+        .character-img-container { width: 100%; max-width: 180px; border-radius: 5px; overflow: hidden; margin-bottom: 15px; aspect-ratio: 1 / 1; }
+        .character-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .equipo-card h3 { color: var(--azul-oscuro); margin-top: 5px; font-size: 1.1rem; }
+        .equipo-card .title-text { font-weight: bold; color: var(--dorado); margin-bottom: 10px; font-size: 0.9rem; }
 
-        .btn {
-            background-color: var(--dorado);
-            color: var(--azul-oscuro);
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-align: center;
-        }
+        .contacto-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; text-align: center; }
+        .contacto-item { background-color: var(--gris-claro); padding: 30px; border-radius: 8px; border-bottom: 4px solid var(--dorado); }
+        .contacto-item h4 { color: var(--azul-oscuro); margin-bottom: 15px; }
+        .contacto-link { display: inline-block; margin-top: 10px; color: var(--azul-oscuro); text-decoration: none; font-weight: bold; word-break: break-all; }
+        .btn-wa { background-color: var(--whatsapp); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; }
 
-        .btn:hover {
-            background-color: #c48f32;
-        }
+        footer { background-color: #11142b; color: var(--blanco); text-align: center; padding: 20px; font-size: 0.9rem; }
 
-        /* Secciones Generales */
-        section {
-            padding: 60px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--azul-oscuro);
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        /* Cuadrículas y Tarjetas */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--blanco);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--dorado);
-        }
-
-        .card h3 {
-            color: var(--azul-oscuro);
-            margin-bottom: 15px;
-        }
-
-        .curso-badge {
-            background-color: var(--dorado);
-            color: var(--azul-oscuro);
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        /* Mascotas */
-        .equipo-bg {
-            background-color: var(--azul-oscuro);
-            color: var(--blanco);
-        }
-
-        .equipo-bg .section-title {
-            color: var(--dorado);
-        }
-
-        .equipo-card {
-            background-color: var(--blanco);
-            color: var(--texto);
-            border: 2px solid var(--dorado); 
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .equipo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-        }
-
-        .character-img-container {
-            width: 100%; 
-            max-width: 200px; 
-            border-radius: 5px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            aspect-ratio: 1 / 1; 
-        }
-
-        .character-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            display: block;
-        }
-
-        .equipo-card h3 {
-            color: var(--azul-oscuro);
-            margin-top: 5px;
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .equipo-card .title-text {
-            font-weight: bold;
-            color: var(--dorado);
-            margin-bottom: 10px;
-        }
-
-        /* Contacto */
-        .contacto-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contacto-item {
-            background-color: var(--gris-claro);
-            padding: 30px;
-            border-radius: 8px;
-            border-bottom: 4px solid var(--dorado);
-        }
-
-        .contacto-item h4 {
-            color: var(--azul-oscuro);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .contacto-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--azul-oscuro);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            word-break: break-all;
-        }
-
-        .contacto-link:hover {
-            color: var(--dorado);
-        }
-
-        .btn-wa {
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-wa:hover {
-            background-color: #128C7E;
-        }
-
-        footer {
-            background-color: #11142b;
-            color: var(--blanco);
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* MÓVIL RESPONSIVO */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-                gap: 15px;
-            }
-            nav {
-                flex-direction: column;
-                width: 100%;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .btn {
-                width: 100%;
-                box-sizing: border-box;
-            }
+            header { flex-direction: column; padding: 1rem; gap: 15px; }
+            nav { flex-direction: column; width: 100%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .hero h2 { font-size: 1.8rem; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>ESPACIO <span>REGULATORIO</span></h1>
+        <h1>SYNERGY <span>TJ</span></h1>
         <nav>
             <ul>
                 <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
-                <li><a href="#consultoria" data-i18n="nav_consulting">Consultoría</a></li>
-                <li><a href="#capacitacion" data-i18n="nav_training">Capacitación</a></li>
-                <li><a href="#equipo" data-i18n="nav_team">Mascotas</a></li>
+                <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+                <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="#academia" data-i18n="nav_academy">Academia</a></li>
                 <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
             </ul>
             <div class="lang-switch">
@@ -358,223 +129,206 @@
     </header>
 
     <section id="inicio" class="hero">
-        <h2 data-i18n="hero_title">Hacemos que lo complejo sea simple para tu empresa</h2>
-        <p data-i18n="hero_desc">Te guiamos paso a paso en el cumplimiento de normativas sanitarias ante COFEPRIS y te brindamos las herramientas para que tus proyectos despeguen con seguridad.</p>
-        <a href="#contacto" class="btn" data-i18n="hero_btn">Solicita un diagnóstico</a>
+        <h2 data-i18n="hero_title">Soluciones Integrales en Regulación y Logística en Salud</h2>
+        <p data-i18n="hero_desc">Estrategia, cumplimiento y resguardo para tus proyectos en México. Cumplimos con los estándares más estrictos del sector.</p>
+        <a href="#contacto" class="btn" data-i18n="hero_btn">Contáctanos</a>
     </section>
 
-    <section id="consultoria">
-        <h2 class="section-title" data-i18n="serv_title">Nuestros Servicios de Consultoría</h2>
+    <section id="nosotros">
+        <h2 class="section-title" data-i18n="about_title">Nuestra Filosofía</h2>
         <div class="grid">
-            <div class="card">
-                <div>
-                    <h3 data-i18n="serv_1_title">Transición y Gestión CTD 3.0</h3>
-                    <p data-i18n="serv_1_desc">Especialistas en la migración de la guía CTD 2.0 a la 3.0, asegurando la correcta integración de tus expedientes bajo los lineamientos de la ICH.</p>
-                </div>
+            <div class="card" style="border-top-color: var(--dorado);">
+                <h3 data-i18n="mission_title" style="text-align: center; font-size: 1.5rem;">Misión</h3>
+                <p data-i18n="mission_text" style="text-align: justify; color: #444;">Coadyuvar a que las empresas cuenten con las herramientas suficientes para la toma de decisiones, con óptica multidisciplinaria; con la finalidad de tener medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas y servicios de salud asequibles para la población.</p>
             </div>
-            <div class="card">
-                <div>
-                    <h3 data-i18n="serv_2_title">Gestión en DIGIPRiS</h3>
-                    <p data-i18n="serv_2_desc">Agilizamos y gestionamos tus trámites a través de la plataforma digital de COFEPRIS para optimizar tiempos de respuesta.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3 data-i18n="serv_3_title">Asuntos Regulatorios</h3>
-                    <p data-i18n="serv_3_desc">Asesoría en clasificación de productos, publicidad y cumplimiento de normativas sanitarias vigentes para evitar riesgos.</p>
-                </div>
+            <div class="card" style="border-top-color: var(--dorado);">
+                <h3 data-i18n="vision_title" style="text-align: center; font-size: 1.5rem;">Visión</h3>
+                <p data-i18n="vision_text" style="text-align: justify; color: #444;">Ser una consultoría de referencia nacional e internacional que permita que, a través de nuestro expertise y asesoría técnico-regulatoria se garantice el acceso a medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas en cumplimiento, durante el ciclo de vida de los mismos, así como el ofrecimiento de servicios de salud para coadyuvar al mantenimiento de la salud pública.</p>
             </div>
         </div>
     </section>
 
-    <section id="capacitacion" style="background-color: var(--gris-claro);">
-        <h2 class="section-title" data-i18n="train_title">Academia y Capacitación</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;" data-i18n="train_desc">Nuestros programas de formación están diseñados para profesionales del sector salud, ofreciendo valor curricular y herramientas prácticas para la gestión regulatoria.</p>
+    <section id="servicios" style="background-color: var(--gris-claro);">
+        <h2 class="section-title" data-i18n="serv_title">Servicios Corporativos</h2>
+        <p class="section-subtitle" data-i18n="serv_subtitle">Garantizamos la seguridad y el cumplimiento normativo en cada etapa de tu operación.</p>
         
         <div class="grid">
             <div class="card">
-                <div>
-                    <span class="curso-badge" data-i18n="badge_dc3">Incluye Constancia DC-3</span>
-                    <h3 data-i18n="course_1_title">Integración de Dossiers de Dispositivos Médicos</h3>
-                    <p data-i18n="course_1_desc">Curso especializado presencial y online para dominar los requisitos documentales y las normas de etiquetado vigentes.</p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/525653943130" target="_blank" class="btn" data-i18n="btn_info">Pedir informes</a>
-                </div>
+                <h3 data-i18n="serv_corp_1_t">Holder & Almacenamiento</h3>
+                <ul>
+                    <li data-i18n="serv_corp_1_l1">Representación Legal de titulares extranjeros.</li>
+                    <li data-i18n="serv_corp_1_l2">Titularidad de Registros para Dispositivos Médicos.</li>
+                    <li data-i18n="serv_corp_1_l3">Almacén con Aviso de Funcionamiento (Meds IV, V, VI y DM).</li>
+                    <li data-i18n="serv_corp_1_l4">Vigilancia 24 hrs y Farmacovigilancia.</li>
+                </ul>
             </div>
 
             <div class="card">
-                <div>
-                    <span class="curso-badge" data-i18n="badge_dc3">Incluye Constancia DC-3</span>
-                    <h3 data-i18n="course_2_title">Regulación de Suplementos Alimenticios y Publicidad</h3>
-                    <p data-i18n="course_2_desc">Aprende el marco legal y sanitario correcto para la formulación, etiquetado y promoción publicitaria de suplementos.</p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/525543849035" target="_blank" class="btn" data-i18n="btn_info">Pedir informes</a>
-                </div>
+                <h3 data-i18n="serv_corp_2_t">Establecimientos y Calidad</h3>
+                <ul>
+                    <li data-i18n="serv_corp_2_l1">Implementación de SGC e ISO 13485:2016.</li>
+                    <li data-i18n="serv_corp_2_l2">Obtención de GMPs y Licencias.</li>
+                    <li data-i18n="serv_corp_2_l3">Auditorías y Verificación de instalaciones.</li>
+                    <li data-i18n="serv_corp_2_l4">Certificación NOM-024 (Info en Salud).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 data-i18n="serv_corp_3_t">Gestión ante COFEPRIS</h3>
+                <ul>
+                    <li data-i18n="serv_corp_3_l1">Dossier de Registro Nuevo, Modificaciones y Prórrogas.</li>
+                    <li data-i18n="serv_corp_3_l2">Suplementos y Remedios Herbolarios.</li>
+                    <li data-i18n="serv_corp_3_l3">Permisos de Publicidad e Importación.</li>
+                    <li data-i18n="serv_corp_3_l4">Aviso de Funcionamiento y Responsable Sanitario.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 data-i18n="serv_corp_4_t">Gestión ante SENASICA</h3>
+                <ul>
+                    <li data-i18n="serv_corp_4_l1">Funcionamiento y Registros Veterinarios.</li>
+                    <li data-i18n="serv_corp_4_l2">Autorización de Alimentos para animales.</li>
+                    <li data-i18n="serv_corp_4_l3">Certificados de Libre Venta y Origen.</li>
+                    <li data-i18n="serv_corp_4_l4">Responsiva MVZ y Verificación.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="equipo" class="equipo-bg">
-        <h2 class="section-title" data-i18n="team_title">Aprende con Nuestro Equipo</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;" data-i18n="team_desc">Nuestra metodología de enseñanza integra personajes únicos que hacen del aprendizaje regulatorio una experiencia dinámica y amigable.</p>
+    <section id="academia">
+        <h2 class="section-title">ESPACIO REGULATORIO</h2>
+        <p class="section-subtitle" data-i18n="train_desc">Capacitación especializada de Synergy TJ. Formación con valor curricular (DC-3).</p>
+        
+        <div class="grid" style="margin-bottom: 40px;">
+            <div class="card" style="border-top-color: var(--dorado); text-align: center;">
+                <span class="curso-badge" data-i18n="badge_dc3">Incluye Constancia DC-3</span>
+                <h3 data-i18n="course_1_title">Dossier de Dispositivos Médicos y Etiquetado</h3>
+                <p data-i18n="course_1_desc">Curso sobre requisitos documentales y normas de etiquetado vigentes.</p>
+                <div style="margin-top: 15px;"><a href="https://wa.me/525653943130" target="_blank" class="btn" data-i18n="btn_info">Informes</a></div>
+            </div>
+
+            <div class="card" style="border-top-color: var(--dorado); text-align: center;">
+                <span class="curso-badge" data-i18n="badge_dc3">Incluye Constancia DC-3</span>
+                <h3 data-i18n="course_2_title">Suplementos Alimenticios y Publicidad</h3>
+                <p data-i18n="course_2_desc">Marco legal para formulación y promoción de suplementos en México.</p>
+                <div style="margin-top: 15px;"><a href="https://wa.me/525543849035" target="_blank" class="btn" data-i18n="btn_info">Informes</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipo-bg">
+        <h2 class="section-title" data-i18n="team_title" style="margin-bottom: 30px;">Aprende con Nuestro Equipo</h2>
         <div class="grid">
-            
             <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="bu-noms.png" alt="Retrato de BuNOMS">
-                </div>
+                <div class="character-img-container"><img src="bu-noms.png" alt="BuNOMS"></div>
                 <h3>Hon. Licenciado BuNOMS</h3>
                 <p class="title-text" data-i18n="bunoms_role">Magistrado</p>
-                <p data-i18n="bunoms_desc">Tu guía experto en actualizaciones legales y normativas.</p>
             </div>
-
             <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="cleo.png" alt="Retrato de Cleo">
-                </div>
+                <div class="character-img-container"><img src="cleo.png" alt="Cleo"></div>
                 <h3>Cleo</h3>
                 <p class="title-text" data-i18n="cleo_role">Investigadora Legal</p>
-                <p data-i18n="cleo_desc">Casos regulatorios para la araña.</p>
             </div>
-
             <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="elefeum.png" alt="Retrato de EleFEUM">
-                </div>
+                <div class="character-img-container"><img src="elefeum.png" alt="EleFEUM"></div>
                 <h3>EleFEUM</h3>
                 <p class="title-text" data-i18n="elefeum_role">Especialista Normativa</p>
-                <p data-i18n="elefeum_desc">Te mantiene al día con las últimas actualizaciones de leyes y regulaciones.</p>
             </div>
-
             <div class="equipo-card">
-                <div class="character-img-container">
-                    <img src="oso-reguloso.png" alt="Retrato de Oso Reguloso">
-                </div>
+                <div class="character-img-container"><img src="oso-reguloso.png" alt="Oso Reguloso"></div>
                 <h3>Oso Reguloso</h3>
                 <p class="title-text" data-i18n="oso_role">Director de Gestión</p>
-                <p data-i18n="oso_desc">Claridad y fuerza en la gestión de tus trámites más complejos.</p>
             </div>
-
         </div>
     </section>
 
     <section id="contacto">
-        <h2 class="section-title" data-i18n="contact_title">Contáctanos</h2>
+        <h2 class="section-title" data-i18n="contact_title">Contacto</h2>
         <div class="contacto-container">
-            
             <div class="contacto-item">
-                <h4 data-i18n="contact_wa_title">Atención Vía WhatsApp</h4>
-                <p data-i18n="contact_wa_desc">Escríbenos directamente para agendar una consultoría o pedir informes de nuestros cursos.</p>
-                <a href="https://wa.me/525653943130" target="_blank" class="btn-wa" data-i18n="contact_wa_btn">📱 Enviar WhatsApp al 56 5394 3130</a>
+                <h4 data-i18n="contact_wa_title">WhatsApp</h4>
+                <a href="https://wa.me/525653943130" target="_blank" class="btn-wa">📱 56 5394 3130</a>
             </div>
-
             <div class="contacto-item">
-                <h4 data-i18n="contact_phone_title">Atención Telefónica</h4>
-                <p data-i18n="contact_phone_desc">Llámanos en horario de oficina para atención personalizada.</p>
+                <h4 data-i18n="contact_phone_title">Teléfono</h4>
                 <a href="tel:5543849035" class="contacto-link">📞 55 4384 9035</a>
             </div>
-
             <div class="contacto-item">
-                <h4 data-i18n="contact_email_title">Correo Electrónico</h4>
-                <p data-i18n="contact_email_desc">Para trámites corporativos y envío de documentación.</p>
+                <h4 data-i18n="contact_email_title">Correo</h4>
                 <a href="mailto:administracion@espacioregulatorio.com" class="contacto-link">✉️ administracion@espacioregulatorio.com</a>
             </div>
-
         </div>
     </section>
 
     <footer>
-        <p data-i18n="footer_msg">Impulsa tu cumplimiento regulatorio con seguridad y experiencia.</p>
-        <p style="margin-top: 20px;" data-i18n="footer_copy">&copy; 2026 Espacio Regulatorio. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Synergy TJ & Espacio Regulatorio. Todos los derechos reservados.</p>
     </footer>
 
     <script>
         const translations = {
             es: {
-                nav_home: "Inicio", nav_consulting: "Consultoría", nav_training: "Capacitación", nav_team: "Mascotas", nav_contact: "Contacto",
-                hero_title: "Hacemos que lo complejo sea simple para tu empresa", hero_desc: "Te guiamos paso a paso en el cumplimiento de normativas sanitarias ante COFEPRIS y te brindamos las herramientas para que tus proyectos despeguen con seguridad.", hero_btn: "Solicita un diagnóstico",
-                serv_title: "Nuestros Servicios de Consultoría",
-                serv_1_title: "Transición y Gestión CTD 3.0", serv_1_desc: "Especialistas en la migración de la guía CTD 2.0 a la 3.0, asegurando la correcta integración de tus expedientes bajo los lineamientos de la ICH.",
-                serv_2_title: "Gestión en DIGIPRiS", serv_2_desc: "Agilizamos y gestionamos tus trámites a través de la plataforma digital de COFEPRIS para optimizar tiempos de respuesta.",
-                serv_3_title: "Asuntos Regulatorios", serv_3_desc: "Asesoría en clasificación de productos, publicidad y cumplimiento de normativas sanitarias vigentes para evitar riesgos.",
-                train_title: "Academia y Capacitación", train_desc: "Nuestros programas de formación están diseñados para profesionales del sector salud, ofreciendo valor curricular y herramientas prácticas para la gestión regulatoria.", badge_dc3: "Incluye Constancia DC-3",
-                course_1_title: "Integración de Dossiers de Dispositivos Médicos", course_1_desc: "Curso especializado presencial y online para dominar los requisitos documentales y las normas de etiquetado vigentes.",
-                course_2_title: "Regulación de Suplementos Alimenticios y Publicidad", course_2_desc: "Aprende el marco legal y sanitario correcto para la formulación, etiquetado y promoción publicitaria de suplementos.",
-                btn_info: "Pedir informes",
-                team_title: "Aprende con Nuestro Equipo", team_desc: "Nuestra metodología de enseñanza integra personajes únicos que hacen del aprendizaje regulatorio una experiencia dinámica y amigable.",
-                bunoms_role: "Magistrado", bunoms_desc: "Tu guía experto en actualizaciones legales y normativas.",
-                cleo_role: "Investigadora Legal", cleo_desc: "Casos regulatorios para la araña.",
-                elefeum_role: "Especialista Normativa", elefeum_desc: "Te mantiene al día con las últimas actualizaciones de leyes y regulaciones.",
-                oso_role: "Director de Gestión", oso_desc: "Claridad y fuerza en la gestión de tus trámites más complejos.",
-                contact_title: "Contáctanos",
-                contact_wa_title: "Atención Vía WhatsApp", contact_wa_desc: "Escríbenos directamente para agendar una consultoría o pedir informes de nuestros cursos.", contact_wa_btn: "📱 Enviar WhatsApp al 56 5394 3130",
-                contact_phone_title: "Atención Telefónica", contact_phone_desc: "Llámanos en horario de oficina para atención personalizada.",
-                contact_email_title: "Correo Electrónico", contact_email_desc: "Para trámites corporativos y envío de documentación.",
-                footer_msg: "Impulsa tu cumplimiento regulatorio con seguridad y experiencia.", footer_copy: "© 2026 Espacio Regulatorio. Todos los derechos reservados."
+                nav_home: "Inicio", nav_about: "Nosotros", nav_services: "Servicios", nav_academy: "Academia", nav_contact: "Contacto",
+                hero_title: "Soluciones Integrales en Regulación y Logística en Salud", hero_desc: "Estrategia, cumplimiento y resguardo para tus proyectos en México. Cumplimos con los estándares más estrictos del sector.", hero_btn: "Contáctanos",
+                about_title: "Nuestra Filosofía",
+                mission_title: "Misión", mission_text: "Coadyuvar a que las empresas cuenten con las herramientas suficientes para la toma de decisiones, con óptica multidisciplinaria; con la finalidad de tener medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas y servicios de salud asequibles para la población.",
+                vision_title: "Visión", vision_text: "Ser una consultoría de referencia nacional e internacional que permita que, a través de nuestro expertise y asesoría técnico-regulatoria se garantice el acceso a medicamentos, dispositivos médicos, cosméticos, suplementos alimenticios, alimentos, bebidas alcohólicas en cumplimiento, durante el ciclo de vida de los mismos, así como el ofrecimiento de servicios de salud para coadyuvar al mantenimiento de la salud pública.",
+                serv_title: "Servicios Corporativos", serv_subtitle: "Garantizamos la seguridad y el cumplimiento normativo en cada etapa de tu operación.",
+                serv_corp_1_t: "Holder & Almacenamiento", serv_corp_1_l1: "Representación Legal de titulares extranjeros.", serv_corp_1_l2: "Titularidad de Registros para Dispositivos Médicos.", serv_corp_1_l3: "Almacén con Aviso de Funcionamiento (Meds IV, V, VI y DM).", serv_corp_1_l4: "Vigilancia 24 hrs y Farmacovigilancia.",
+                serv_corp_2_t: "Establecimientos y Calidad", serv_corp_2_l1: "Implementación de SGC e ISO 13485:2016.", serv_corp_2_l2: "Obtención de GMPs y Licencias.", serv_corp_2_l3: "Auditorías y Verificación de instalaciones.", serv_corp_2_l4: "Certificación NOM-024 (Info en Salud).",
+                serv_corp_3_t: "Gestión ante COFEPRIS", serv_corp_3_l1: "Dossier de Registro Nuevo, Modificaciones y Prórrogas.", serv_corp_3_l2: "Suplementos y Remedios Herbolarios.", serv_corp_3_l3: "Permisos de Publicidad e Importación.", serv_corp_3_l4: "Aviso de Funcionamiento y Responsable Sanitario.",
+                serv_corp_4_t: "Gestión ante SENASICA", serv_corp_4_l1: "Funcionamiento y Registros Veterinarios.", serv_corp_4_l2: "Autorización de Alimentos para animales.", serv_corp_4_l3: "Certificados de Libre Venta y Origen.", serv_corp_4_l4: "Responsiva MVZ y Verificación.",
+                train_desc: "Capacitación especializada de Synergy TJ. Formación con valor curricular (DC-3).", badge_dc3: "Incluye Constancia DC-3",
+                course_1_title: "Dossier de Dispositivos Médicos y Etiquetado", course_1_desc: "Curso sobre requisitos documentales y normas de etiquetado vigentes.",
+                course_2_title: "Suplementos Alimenticios y Publicidad", course_2_desc: "Marco legal para formulación y promoción de suplementos en México.",
+                btn_info: "Informes", team_title: "Aprende con Nuestro Equipo", bunoms_role: "Magistrado", cleo_role: "Investigadora Legal", elefeum_role: "Especialista Normativa", oso_role: "Director de Gestión",
+                contact_title: "Contacto", contact_wa_title: "WhatsApp", contact_phone_title: "Teléfono", contact_email_title: "Correo"
             },
             en: {
-                nav_home: "Home", nav_consulting: "Consulting", nav_training: "Training", nav_team: "Mascots", nav_contact: "Contact",
-                hero_title: "We make the complex simple for your company", hero_desc: "We guide you step-by-step in health regulatory compliance before COFEPRIS and provide you with the tools so your projects take off securely.", hero_btn: "Request a diagnosis",
-                serv_title: "Our Consulting Services",
-                serv_1_title: "CTD 3.0 Transition & Management", serv_1_desc: "Specialists in the migration from the CTD 2.0 to 3.0 guide, ensuring the correct integration of your dossiers under ICH guidelines.",
-                serv_2_title: "DIGIPRiS Management", serv_2_desc: "We speed up and manage your procedures through the COFEPRIS digital platform to optimize response times.",
-                serv_3_title: "Regulatory Affairs", serv_3_desc: "Advice on product classification, advertising, and compliance with current health regulations to avoid risks.",
-                train_title: "Academy & Training", train_desc: "Our training programs are designed for health sector professionals, offering curricular value and practical tools for regulatory management.", badge_dc3: "Includes DC-3 Certificate",
-                course_1_title: "Medical Devices Dossier Integration", course_1_desc: "Specialized in-person and online course to master documentary requirements and current labeling standards.",
-                course_2_title: "Dietary Supplements and Advertising Regulation", course_2_desc: "Learn the correct legal and health framework for the formulation, labeling, and advertising promotion of supplements.",
-                btn_info: "Request info",
-                team_title: "Learn with Our Team", team_desc: "Our teaching methodology integrates unique characters that make regulatory learning a dynamic and friendly experience.",
-                bunoms_role: "Magistrate", bunoms_desc: "Your expert guide in legal and regulatory updates.",
-                cleo_role: "Legal Investigator", cleo_desc: "Regulatory cases for the spider.",
-                elefeum_role: "Regulatory Specialist", elefeum_desc: "Keeps you up to date with the latest laws and regulations updates.",
-                oso_role: "Management Director", oso_desc: "Clarity and strength in managing your most complex procedures.",
-                contact_title: "Contact Us",
-                contact_wa_title: "WhatsApp Support", contact_wa_desc: "Write to us directly to schedule a consultation or request course information.", contact_wa_btn: "📱 Send WhatsApp to 56 5394 3130",
-                contact_phone_title: "Phone Support", contact_phone_desc: "Call us during office hours for personalized attention.",
-                contact_email_title: "Email", contact_email_desc: "For corporate procedures and documentation submission.",
-                footer_msg: "Boost your regulatory compliance with security and experience.", footer_copy: "© 2026 Espacio Regulatorio. All rights reserved."
+                nav_home: "Home", nav_about: "About Us", nav_services: "Services", nav_academy: "Academy", nav_contact: "Contact",
+                hero_title: "Comprehensive Solutions in Health Regulation and Logistics", hero_desc: "Strategy, compliance, and protection for your projects in Mexico. We meet the strictest standards in the sector.", hero_btn: "Contact Us",
+                about_title: "Our Philosophy",
+                mission_title: "Mission", mission_text: "To help companies have sufficient tools for decision-making from a multidisciplinary perspective; aiming to provide affordable medications, medical devices, cosmetics, dietary supplements, food, alcoholic beverages, and healthcare services to the population.",
+                vision_title: "Vision", vision_text: "To be a national and international reference consultancy that ensures, through our expertise and technical-regulatory advice, access to compliant medications, medical devices, cosmetics, dietary supplements, food, and alcoholic beverages throughout their life cycle, as well as offering healthcare services to contribute to the maintenance of public health.",
+                serv_title: "Corporate Services", serv_subtitle: "We ensure safety and regulatory compliance at every stage of your operation.",
+                serv_corp_1_t: "Holder & Warehousing", serv_corp_1_l1: "Legal Representation for foreign holders.", serv_corp_1_l2: "Registration Ownership for Medical Devices.", serv_corp_1_l3: "Operating Notice Warehouse (Meds & MD).", serv_corp_1_l4: "24/7 Surveillance and Pharmacovigilance.",
+                serv_corp_2_t: "Facilities & Quality", serv_corp_2_l1: "QMS and ISO 13485:2016 Implementation.", serv_corp_2_l2: "Obtaining GMPs and Licenses.", serv_corp_2_l3: "Audits and Facility Verification.", serv_corp_2_l4: "NOM-024 Certification (Health Info).",
+                serv_corp_3_t: "COFEPRIS Management", serv_corp_3_l1: "Dossier for New Registrations and Extensions.", serv_corp_3_l2: "Supplements and Herbal Remedies.", serv_corp_3_l3: "Advertising and Import Permits.", serv_corp_3_l4: "Operating Notice and Sanitary Responsible.",
+                serv_corp_4_t: "SENASICA Management", serv_corp_4_l1: "Operating Start and Veterinary Registries.", serv_corp_4_l2: "Authorization of Veterinary Foods.", serv_corp_4_l3: "Free Sale and Origin Certificates.", serv_corp_4_l4: "Authorized MVZ Responsiveness.",
+                train_desc: "Specialized training by Synergy TJ. Education with curricular value (DC-3).", badge_dc3: "Includes DC-3 Certificate",
+                course_1_title: "Medical Devices Dossier & Labeling", course_1_desc: "Course on documentary requirements and current labeling standards.",
+                course_2_title: "Dietary Supplements & Advertising", course_2_desc: "Legal framework for formulation and promotion of supplements in Mexico.",
+                btn_info: "Info", team_title: "Learn with Our Team", bunoms_role: "Magistrate", cleo_role: "Legal Investigator", elefeum_role: "Regulatory Specialist", oso_role: "Management Director",
+                contact_title: "Contact", contact_wa_title: "WhatsApp", contact_phone_title: "Phone", contact_email_title: "Email"
             },
             pt: {
-                nav_home: "Início", nav_consulting: "Consultoria", nav_training: "Treinamento", nav_team: "Mascotes", nav_contact: "Contato",
-                hero_title: "Tornamos o complexo simples para a sua empresa", hero_desc: "Orientamos você passo a passo no cumprimento das normas sanitárias perante a COFEPRIS e fornecemos as ferramentas para que seus projetos decolem com segurança.", hero_btn: "Solicite um diagnóstico",
-                serv_title: "Nossos Serviços de Consultoria",
-                serv_1_title: "Transição e Gestão CTD 3.0", serv_1_desc: "Especialistas na migração do guia CTD 2.0 para o 3.0, garantindo a correta integração dos seus dossiês sob as diretrizes do ICH.",
-                serv_2_title: "Gestão no DIGIPRiS", serv_2_desc: "Agilizamos e gerenciamos seus trâmites através da plataforma digital da COFEPRIS para otimizar os tempos de resposta.",
-                serv_3_title: "Assuntos Regulatórios", serv_3_desc: "Assessoria na classificação de produtos, publicidade e cumprimento das normas sanitárias vigentes para evitar riscos.",
-                train_title: "Academia e Treinamento", train_desc: "Nossos programas de treinamento são projetados para profissionais do setor de saúde, oferecendo valor curricular e ferramentas práticas para a gestão regulatória.", badge_dc3: "Inclui Certificado DC-3",
-                course_1_title: "Integração de Dossiês de Dispositivos Médicos", course_1_desc: "Curso especializado presencial e online para dominar os requisitos documentais e as normas de rotulagem vigentes.",
-                course_2_title: "Regulação de Suplementos Alimentares e Publicidade", course_2_desc: "Aprenda o quadro legal e sanitário correto para a formulação, rotulagem e promoção publicitária de suplementos.",
-                btn_info: "Solicitar informações",
-                team_title: "Aprenda com Nossa Equipe", team_desc: "Nossa metodologia de ensino integra personagens únicos que tornam o aprendizado regulatório uma experiência dinâmica e amigável.",
-                bunoms_role: "Magistrado", bunoms_desc: "Seu guia especialista em atualizações legais e regulatórias.",
-                cleo_role: "Investigadora Legal", cleo_desc: "Casos regulatórios para a aranha.",
-                elefeum_role: "Especialista Normativa", elefeum_desc: "Mantém você atualizado com as últimas atualizações de leis e regulamentos.",
-                oso_role: "Diretor de Gestão", oso_desc: "Clareza e força na gestão dos seus trâmites mais complexos.",
-                contact_title: "Contate-nos",
-                contact_wa_title: "Atendimento via WhatsApp", contact_wa_desc: "Escreva-nos diretamente para agendar uma consultoria ou solicitar informações sobre nossos cursos.", contact_wa_btn: "📱 Enviar WhatsApp para 56 5394 3130",
-                contact_phone_title: "Atendimento Telefônico", contact_phone_desc: "Ligue para nós em horário comercial para atendimento personalizado.",
-                contact_email_title: "E-mail", contact_email_desc: "Para trâmites corporativos e envio de documentação.",
-                footer_msg: "Impulsione sua conformidade regulatória com segurança e experiência.", footer_copy: "© 2026 Espacio Regulatorio. Todos os direitos reservados."
+                nav_home: "Início", nav_about: "Sobre Nós", nav_services: "Serviços", nav_academy: "Academia", nav_contact: "Contato",
+                hero_title: "Soluções Integrais em Regulação e Logística de Saúde", hero_desc: "Estratégia, conformidade e proteção para seus projetos no México. Atendemos aos padrões mais rigorosos do setor.", hero_btn: "Contate-nos",
+                about_title: "Nossa Filosofia",
+                mission_title: "Missão", mission_text: "Contribuir para que as empresas contem com as ferramentas suficientes para a tomada de decisões, com uma ótica multidisciplinar; com a finalidade de ter medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos, bebidas alcoólicas e serviços de saúde acessíveis para a população.",
+                vision_title: "Visão", vision_text: "Ser uma consultoria de referência nacional e internacional que permita, através da nossa expertise e assessoria técnico-regulatória, garantir o acesso a medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos e bebidas alcoólicas em conformidade durante o seu ciclo de vida, bem como a oferta de serviços de saúde para contribuir com a manutenção da saúde pública.",
+                serv_title: "Serviços Corporativos", serv_subtitle: "Garantimos a segurança e o cumprimento normativo em cada etapa de sua operação.",
+                serv_corp_1_t: "Holder e Armazenamento", serv_corp_1_l1: "Representação Legal de titulares estrangeiros.", serv_corp_1_l2: "Titularidade de Registros para Dispositivos Médicos.", serv_corp_1_l3: "Armazém com Aviso de Funcionamento (Meds e DM).", serv_corp_1_l4: "Vigilância 24 hrs e Farmacovigilância.",
+                serv_corp_2_t: "Instalações e Qualidade", serv_corp_2_l1: "Implementação de SGC e ISO 13485:2016.", serv_corp_2_l2: "Obtenção de GMPs e Licenças.", serv_corp_2_l3: "Auditorias e Verificação de instalações.", serv_corp_2_l4: "Certificação NOM-024 (Info em Saúde).",
+                serv_corp_3_t: "Gestão perante COFEPRIS", serv_corp_3_l1: "Dossiê de Registro Novo e Prorrogações.", serv_corp_3_l2: "Suplementos e Remédios Herbais.", serv_corp_3_l3: "Permissões de Publicidade e Importação.", serv_corp_3_l4: "Aviso de Funcionamento e Responsável.",
+                serv_corp_4_t: "Gestão perante SENASICA", serv_corp_4_l1: "Funcionamento e Registros Veterinários.", serv_corp_4_l2: "Autorização de Alimentos para animais.", serv_corp_4_l3: "Certificados de Venda Livre e Origem.", serv_corp_4_l4: "Responsável MVZ e Verificação.",
+                train_desc: "Treinamento especializado da Synergy TJ. Formação com valor curricular (DC-3).", badge_dc3: "Inclui Certificado DC-3",
+                course_1_title: "Dossiê de Dispositivos Médicos e Rotulagem", course_1_desc: "Curso sobre requisitos documentais e normas de rotulagem vigentes.",
+                course_2_title: "Suplementos Alimentares e Publicidade", course_2_desc: "Quadro legal para formulação e promoção de suplementos no México.",
+                btn_info: "Infor.", team_title: "Aprenda com Nossa Equipe", bunoms_role: "Magistrado", cleo_role: "Investigadora Legal", elefeum_role: "Especialista Normativa", oso_role: "Diretor de Gestão",
+                contact_title: "Contato", contact_wa_title: "WhatsApp", contact_phone_title: "Telefone", contact_email_title: "E-mail"
             }
         };
 
         function setLang(lang) {
-            // Cambiar textos según el diccionario
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key]; // innerHTML respeta emojis como el del celular
+                    element.innerHTML = translations[lang][key];
                 }
             });
-
-            // Actualizar estilo visual de los botones de idioma
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if(btn.innerText.toLowerCase() === lang) {
-                    btn.classList.add('active');
-                }
+                if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
             });
         }
     </script>
