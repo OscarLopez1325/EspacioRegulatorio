@@ -64,7 +64,7 @@
         /* SECCIONES */
         section { padding: 100px 5%; }
         .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 4px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; } /* Ajustado minmax para móviles */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 
         .card { 
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 40px; 
@@ -82,12 +82,32 @@
         .valores-box { text-align: center; margin-top: 80px; }
         .valores-img { max-width: 100%; width: 900px; height: auto; border: 1px solid rgba(166, 124, 82, 0.3); border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 
-        /* ACADEMIA (ESPACIO REGULATORIO STYLE) */
-        #academia { background-color: var(--er-navy); position: relative; overflow: hidden; }
-        #academia::after { content: ""; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.03); border-radius: 50%; }
-        #academia .section-title { color: white; }
-        .er-logo-img { display: block; max-width: 100%; width: 200px; margin: 0 auto 40px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
-        .er-card { background: rgba(255,255,255,0.95); color: var(--er-navy); border-top: 5px solid var(--oro); }
+        /* ACADEMIA CON VIDEO DE FONDO */
+        #academia { 
+            background-color: var(--er-navy); 
+            position: relative; 
+            overflow: hidden; 
+            z-index: 1;
+        }
+        
+        /* Estilo para el video de fondo */
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; /* Lo manda al fondo */
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 0.4; /* Ajusta esto para que el video sea más o menos visible */
+        }
+
+        #academia .section-title { color: white; position: relative; }
+        .er-logo-img { display: block; max-width: 100%; width: 200px; margin: 0 auto 40px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); position: relative; }
+        .er-card { background: rgba(255,255,255,0.95); color: var(--er-navy); border-top: 5px solid var(--oro); position: relative; }
         .er-card h3 { color: var(--er-navy); border-color: #ddd; }
         .er-card p { color: #444; }
         .curso-badge { background: var(--er-navy); color: var(--oro); padding: 5px 15px; font-size: 0.75rem; margin-bottom: 15px; display: inline-block; }
@@ -242,6 +262,10 @@
     </section>
 
     <section id="academia">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="nombre_de_tu_video.mp4" type="video/mp4">
+        </video>
+
         <img src="Logo Espacio_r.png" alt="Espacio Regulatorio Logo" class="er-logo-img">
         <h2 class="section-title" data-i18n="aca_t">Espacio Regulatorio Academia</h2>
         
@@ -258,13 +282,6 @@
                 <p data-i18n="c2_p">Marco legal para la formulación, etiquetado y promoción de suplementos en México.</p>
                 <a href="https://wa.me/525543849035" target="_blank" class="btn" style="margin-top:20px;" data-i18n="btn_info">Informes</a>
             </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 60px;">
-            <video width="100%" style="max-width: 900px; border-radius: 8px; border: 1px solid var(--bronce); box-shadow: 0 10px 30px rgba(0,0,0,0.5);" autoplay loop muted playsinline>
-                <source src="nombre_de_tu_video.mp4" type="video/mp4">
-                Tu navegador no soporta el formato de video.
-            </video>
         </div>
 
         <h2 class="section-title" style="margin-top: 100px; color:white;" data-i18n="tea_t">Nuestro Equipo</h2>
@@ -440,7 +457,7 @@
             pt: {
                 nav_home: "Início", nav_corp: "Corporativo", nav_serv: "Serviços", nav_aca: "Academia", nav_cont: "Contato",
                 hero_t: "Regulação e Logística em Ciências da Saúde", 
-                hero_d: "Soluções multidisciplinares de alto nível para garantir a conformidade regulatória e o sucesso de seus projetos no México e internacionalmente.", 
+                hero_d: "Soluções multidisciplinares de alto nivel para garantir a conformidade regulatória e o sucesso de seus projetos no México e internacionalmente.", 
                 hero_b: "Consultoria Sênior",
                 who_t: "Quem Somos", 
                 who_p1: "Somos uma empresa jovem formada por profissionais com mais de 16 anos de experiência na indústria de Ciências da Saúde, bem como em seus estabelecimentos.",
@@ -449,9 +466,9 @@
                 mis_t: "Missão", 
                 mis_p: "Auxiliar as empresas a terem ferramentas suficientes para a tomada de decisões, com uma perspectiva multidisciplinar; visando disponibilizar medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos, bebidas alcoólicas e serviços de saúde acessíveis à população.",
                 vis_t: "Visão", 
-                vis_p: "Ser uma consultoria de referência nacional e internacional que garanta, por meio de nossa expertise e assessoria técnico-regulatória, o acesso a medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos e bebidas alcoólicas em conformidade durante seu ciclo de vida, bem como oferecer serviços de saúde para ajudar na manutenção da saúde pública.",
+                vis_p: "Ser una consultoria de referência nacional e internacional que garanta, por meio de nossa expertise e assessoria técnico-regulatória, o acesso a medicamentos, dispositivos médicos, cosméticos, suplementos alimentares, alimentos e bebidas alcoólicas em conformidade durante seu ciclo de vida, bem como oferecer serviços de saúde para ajudar na manutenção da saúde pública.",
                 pur_t: "Nosso Propósito",
-                pur_p: "É compartilhar e contribuir com nossos conhecimentos e expertise, através de nossos clientes, para que existam insumos de saúde com Qualidade, Segurança e Eficácia, bem como diversos produtos de uso humano e serviços de saúde; que ajudem a manter a Saúde Pública, reconhecendo a sinergia entre a regulação e a parte técnica.",
+                pur_p: "É compartilhar e contribuir com nuestros conocimientos e expertise, através de nuestros clientes, para que existam insumos de saúde com Qualidade, Segurança e Eficácia, bem como diversos produtos de uso humano e servicios de saúde; que ajudem a manter a Saúde Pública, reconhecendo a sinergia entre a regulação e a parte técnica.",
                 ser_title: "Linhas de Negócio", 
                 s1_t: "Holder / Representante Legal", 
                 s1_p1: "Colocamos à sua disposição um armazém de depósito e distribuição com aviso de funcionamento para venda por atacado de medicamentos das frações IV, V e VI, bem como dispositivos médicos.",
@@ -459,32 +476,32 @@
                 s1_l2: "Titularidade de Registro Sanitário (Dispositivos Médicos).",
                 s1_h: "Inclui:",
                 s1_i1: "Vigilância 24 horas.",
-                s1_i2: "Unidade de Farmacovigilância e/ou Tecnovigilância.",
-                s1_i3: "Aviso de Funcionamento com possibilidades de obter a Licença Sanitária para manuseio de produtos controlados.",
+                s1_i2: "Unidade de Farmacovigilância e/ou Tecnovigilancia.",
+                s1_i3: "Aviso de Funcionamiento com posibilidades de obter a Licença Sanitária para manuseio de produtos controlados.",
                 s1_h2: "TIPOS DE ARMAZÉNS USO HUMANO",
                 s1_p2: "Matéria-prima, Cosméticos, Suplementos Alimentares, Medicamentos, Dispositivos médicos. (*Uso veterinário sob consulta).",
                 s2_t: "Instalações e Qualidade", 
-                s2_l1: "Implementação de SGQ, obtenção de Certificação ISO 13485:2016, BPF da COFEPRIS, Licenças, entre outros.",
-                s2_l2: "Verificação de instalações e Auditorias.",
+                s2_l1: "Implementação de SGQ, obtenção de Certificación ISO 13485:2016, BPF da COFEPRIS, Licenças, entre outros.",
+                s2_l2: "Verificación de instalações e Auditorias.",
                 s2_l3: "Apoio no manuseio de medidas de segurança.",
-                s2_h: "Certificação NOM-024",
-                s2_p: "Obtenção da certificação NOM-024-SSA3-2012 Sistemas de Informação de Registro Eletrônico para a Saúde perante a DGIS.",
+                s2_h: "Certificación NOM-024",
+                s2_p: "Obtenção da certificação NOM-024-SSA3-2012 Sistemas de Información de Registro Eletrônico para a Saúde perante a DGIS.",
                 s3_t: "Trâmites perante a COFEPRIS", 
                 s3_l1: "Montagem de dossiê de Registro Novo, Modificações e Prorrogações de Medicamentos e DM.",
-                s3_l2: "Código alfanumérico de Remédios Fitoterápicos e Classificação de Suplementos.",
+                s3_l2: "Código alfanumérico de Remédios Fitoterápicos e Classificación de Suplementos.",
                 s3_l3: "Avisos e Permissões de Publicidade e Importação.",
-                s3_l4: "Aviso de Funcionamento e Responsável Sanitário.",
+                s3_l4: "Aviso de Funcionamiento e Responsável Sanitário.",
                 s4_t: "Trâmites perante a SENASICA",
-                s4_l1: "Aviso de início de Funcionamento e Registros veterinários.",
+                s4_l1: "Aviso de inicio de Funcionamiento e Registros veterinários.",
                 s4_l2: "Autorização de Alimentos Veterinários.",
-                s4_l3: "Certificado de Livre Venda e Certificados de Origem.",
+                s4_l3: "Certificado de Libre Venta e Certificados de Origen.",
                 s4_l4: "Permissões de importação e Responsabilidade de Médico Veterinário Zootecnista autorizado.",
-                s4_l5: "Verificação de estabelecimentos.",
+                s4_l5: "Verificación de estabelecimentos.",
                 aca_t: "Espacio Regulatorio Academia", badge: "Certificado DC-3", 
                 c1_t: "Dossiê de Dispositivos Médicos e Rotulagem", 
                 c1_p: "Treinamento técnico sobre requisitos documentais e normas de rotulagem vigentes.",
                 c2_t: "Suplementos Alimentares e Publicidade", 
-                c2_p: "Marco legal para a formulação, rotulagem e promoção de suplementos no México.",
+                c2_p: "Marco legal para a formulación, rotulagem e promoção de suplementos no México.",
                 btn_info: "Informações",
                 tea_t: "Nossa Equipe", 
                 r1: "Magistrado", r1_d: "Guia especialista em atualizações legais e normativas.",
@@ -493,7 +510,7 @@
                 r4: "Diretor de Gestão", r4_d: "Clareza e força estratégica na gestão de trâmites complexos.",
                 c_wa: "WhatsApp Direto", c_ph: "Linha Telefônica", c_em: "E-mail Corporativo", 
                 f_copy: "SYNERGY TJ &copy; 2026 | Logística, Regulação e Estratégia Técnica em Saúde.",
-                f_sub: "Todos os direitos reservados."
+                f_sub: "Todos los derechos reservados."
             }
         };
 
