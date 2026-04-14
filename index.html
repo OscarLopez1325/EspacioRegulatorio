@@ -104,12 +104,12 @@
             height: auto;
             z-index: 0;
             transform: translate(-50%, -50%);
-            opacity: 0.25; /* Opacidad ajustada para que el texto siga siendo legible */
+            opacity: 0.25; 
             pointer-events: none;
         }
         .academia-content {
             position: relative;
-            z-index: 1; /* Mantiene el contenido por encima del video */
+            z-index: 1; 
         }
         
         #academia::after { content: ""; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.03); border-radius: 50%; z-index: 0; }
@@ -138,6 +138,70 @@
         .c-link { color: var(--texto-blanco); text-decoration: none; font-weight: 700; font-size: 1.2rem; display: block; word-break: break-all; }
         .wa-link { color: var(--whatsapp); font-weight: 700; text-decoration: none; font-size: 1.2rem; }
 
+        /* FORMULARIO DE CONTACTO (Estilo Minimalista/Blanco) */
+        .form-container {
+            max-width: 700px;
+            margin: 60px auto 0;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 4px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .form-title-img {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-family: var(--fuente-titulos);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-family: var(--fuente-texto);
+            color: #495057;
+            background-color: #ffffff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--bronce);
+        }
+        .form-input::placeholder {
+            color: #6c757d;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #495057;
+            font-family: var(--fuente-texto);
+            font-size: 1rem;
+        }
+        .form-submit-btn {
+            background-color: var(--er-navy);
+            color: #ffffff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: var(--fuente-subtitulos);
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .form-submit-btn:hover {
+            background-color: var(--bronce);
+        }
+
         footer { padding: 60px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: var(--texto-gris); }
 
         /* RESPONSIVIDAD MEJORADA */
@@ -157,6 +221,7 @@
             section { padding: 60px 5%; }
             .section-title { font-size: 1.8rem; margin-bottom: 40px; }
             .card { padding: 25px; }
+            .form-container { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -232,8 +297,7 @@
                     <li data-i18n="s1_i3">Aviso de Funcionamiento con posibilidades a conseguir la Licencia Sanitaria para manejo de producto controlado.</li>
                 </ul>
                 <h4 data-i18n="s1_h2">TIPOS DE ALMACENES USO HUMANO</h4>
-                <p data-i18n="s1_p2">Materia prima, Cosméticos, Suplementos Alimenticios, Medicamentos, Dispositivos médicos. (*Uso veterinario bajo consulta).
-</p>
+                <p data-i18n="s1_p2">Materia prima, Cosméticos, Suplementos Alimenticios, Medicamentos, Dispositivos médicos. (*Uso veterinario bajo consulta).</p>
             </div>
 
             <div class="card">
@@ -297,7 +361,7 @@
             <div style="display: flex; justify-content: center; margin-top: 100px; margin-bottom: 60px;">
                 <div class="equipo-card" style="border-color: var(--oro); background: rgba(255,255,255,0.05); width: 100%; max-width: 400px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     <div class="portrait" style="border-color: var(--oro); width: 180px; height: 180px;">
-                        <img src="mariana.png" alt="Mariana Arredondo - CEO Synergy TJ">
+                        <img src="mariana.jpg" alt="Mariana Arredondo - CEO Synergy TJ">
                     </div>
                     <h3 style="color: white; margin-bottom: 5px;" data-i18n="ceo_name">Mariana Arredondo</h3>
                     <span class="title-text" style="font-size: 1rem;" data-i18n="ceo_title">CEO & Founder</span>
@@ -350,6 +414,33 @@
                 <h4 data-i18n="c_em">Correo Corporativo</h4>
                 <a href="mailto:administracion@espacioregulatorio.com" class="c-link">✉️ Synergy TJ / ER</a>
             </div>
+        </div>
+
+        <div class="form-container">
+            <h2 class="form-title-img" data-i18n="form_t">CONTÁCTENOS (FARMACOTECNOVILIGANCIA)</h2>
+            <form action="mailto:farmatecnovigilancia@synertgytj.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <input type="text" name="Nombre" class="form-input" placeholder="Su nombre *" required data-i18n-placeholder="form_name">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="Correo" class="form-input" placeholder="Correo electrónico *" required data-i18n-placeholder="form_email">
+                </div>
+                <div class="form-group">
+                    <select name="Pais" class="form-input" required>
+                        <option value="" disabled selected data-i18n="form_country">País/Region *</option>
+                        <option value="Mexico">México</option>
+                        <option value="USA">Estados Unidos</option>
+                        <option value="Latam">Latinoamérica</option>
+                        <option value="Europa">Europa</option>
+                        <option value="Otro" data-i18n="form_other">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" data-i18n="form_msg">Mensaje *</label>
+                    <textarea name="Mensaje" class="form-input" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn" data-i18n="form_btn">Enviar Mensaje</button>
+            </form>
         </div>
     </section>
 
@@ -416,6 +507,7 @@
                 r3: "Analista Normativa", r3_d: "Brinda las últimas actualizaciones de leyes y regulaciones sanitarias.",
                 r4: "Director de Gestión", r4_d: "Claridad y fuerza estratégica en la gestión de trámites complejos.",
                 c_wa: "WhatsApp Directo", c_ph: "Línea Telefónica", c_em: "Correo Corporativo", 
+                form_t: "CONTÁCTENOS", form_name: "Su nombre *", form_email: "Correo electrónico *", form_country: "País/Region *", form_other: "Otro", form_msg: "Mensaje *", form_btn: "Enviar Mensaje",
                 f_copy: "SYNERGY TJ &copy; 2026 | Logística, Regulación y Estrategia Técnica en Salud.",
                 f_sub: "Todos los derechos reservados."
             },
@@ -475,6 +567,7 @@
                 r3: "Regulatory Analyst", r3_d: "Provides the latest updates on health laws and regulations.",
                 r4: "Management Director", r4_d: "Clarity and strategic strength in the management of complex procedures.",
                 c_wa: "Direct WhatsApp", c_ph: "Phone Line", c_em: "Corporate Email", 
+                form_t: "CONTACT US", form_name: "Your name *", form_email: "Email address *", form_country: "Country/Region *", form_other: "Other", form_msg: "Message *", form_btn: "Send Message",
                 f_copy: "SYNERGY TJ &copy; 2026 | Logistics, Regulation and Technical Strategy in Health.",
                 f_sub: "All rights reserved."
             },
@@ -533,17 +626,25 @@
                 r2: "Investigadora Legal", r2_d: "\"Casos regulatorios para a aranha\". Especialista em análise profunda.",
                 r3: "Analista Normativa", r3_d: "Fornece as últimas atualizações de leyes y regulamentações de saúde.",
                 r4: "Diretor de Gestão", r4_d: "Clareza e força estratégica na gestão de trâmites complexos.",
-                c_wa: "WhatsApp Directo", c_ph: "Linha Telefônica", c_em: "E-mail Corporativo", 
+                c_wa: "WhatsApp Direto", c_ph: "Linha Telefônica", c_em: "E-mail Corporativo", 
+                form_t: "CONTATE-NOS", form_name: "Seu nome *", form_email: "E-mail *", form_country: "País/Região *", form_other: "Outro", form_msg: "Mensagem *", form_btn: "Enviar Mensagem",
                 f_copy: "SYNERGY TJ &copy; 2026 | Logística, Regulação e Estratégia Técnica em Saúde.",
                 f_sub: "Todos os derechos reservados."
             }
         };
 
         function setLang(lang) {
+            // Textos normales
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
             });
+            // Placeholders del formulario
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang] && translations[lang][key]) el.placeholder = translations[lang][key];
+            });
+            // Botones de idioma
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
